@@ -15,22 +15,34 @@ input {
 
 #upper {
     max-width: 600px;
-    height: 50%;
+    height: 60%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
+}
+
+@keyframes moving {
+    from { 
+        transform: translateX(100%); 
+    }
+    to { 
+        transform: translateX(-100%); 
+    }
 }
 
 #now-playing {
     text-align: center;
-    width: 90%;
-    padding: 1em 0;
+    width: 100%;
+    padding: 0.5em 0;
     font-size: 2em;
-    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 #bar-container {
@@ -40,8 +52,8 @@ input {
 #bar {
     height: 0.5em;
     background-color: #aaa;
-    border-radius: 0.5em;
     cursor: pointer;
+    margin-bottom: 0.2em;
 }
 
 #progress {
@@ -62,8 +74,8 @@ input {
 }
 
 #backward {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-image: url('../public/fast-forward-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -72,8 +84,8 @@ input {
 }
 
 #play-pause {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -88,8 +100,8 @@ input {
 }
 
 #forward {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-image: url('../public/fast-forward-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,7 +111,7 @@ input {
 #lower {
     position: relative;
     max-width: 600px;
-    height: 50%;
+    height: 35%;
     margin: 0 auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -107,13 +119,13 @@ input {
 
 #upload {
     position: absolute;
-    left: calc(50% - 40px);
-    top: calc(50% - 40px);
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
     background-image: url('../public/upload-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;   
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -127,4 +139,9 @@ input {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    border-bottom: solid 1px #aaa;
+}
+
+.song-info:nth-child(1) {
+    border-top: solid 1px #aaa;
 }

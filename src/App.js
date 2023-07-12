@@ -4,7 +4,7 @@ import Lower from './Lower';
 
 const App = () => {
     const [playlist, setPlaylist] = useState([]);
-    const [playingIndex, setPlayingIndex] = useState(0);
+    const [playingIndex, setPlayingIndex] = useState(-1);
 
     const handleChange = (e) => {
         const files = document.querySelector('input').files;
@@ -17,6 +17,7 @@ const App = () => {
         }
 
         setPlaylist(newPlayList);
+        setPlayingIndex(0);
     };
 
     return (
@@ -34,7 +35,9 @@ const App = () => {
                 setPlayingIndex={setPlayingIndex}
             />
             <Lower 
-                playlist={playlist} 
+                playlist={playlist}
+                playingIndex={playingIndex} 
+                setPlayingIndex={setPlayingIndex}
             />
         </div>
     );
