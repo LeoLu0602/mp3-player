@@ -70,6 +70,31 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
         audio.currentTime = newProgress * audio.duration;
     };
 
+    const drag = (e) => {
+        const audio = document.querySelector('audio');
+        const bar = document.querySelector('#bar');
+        const progressRatio = (e.touches[0].pageX - bar.offsetLeft) / bar.offsetWidth;
+
+        if (
+            progressRatio < 0 || 
+            progressRatio > 1 || 
+            e.pageY < bar.offsetTop - 20 || 
+            e.pageY > bar.offsetTop + bar.offsetHeight + 20
+        ) {
+            endDrag();
+        }
+
+        audio.currentTime = progressRatio * audio.duration;
+    };
+
+    const startDrag = () => {
+        document.addEventListener('touchmove', drag);
+    };
+
+    const endDrag = () => {
+        document.removeEventListener('touchmove', drag);
+    };
+
     useEffect(() => {
         if (playlist.length > 0) {
             setNowPlaying(playlist[playingIndex]);
@@ -95,7 +120,9 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
             </div>
             <div id='bar-container'>
                 <div id='bar' onClick={changeTime}>
-                    <div id='progress' /> 
+                    <div id='progress'>
+                        <div id='progress-drag' onTouchStart={startDrag} onTouchEnd={endDrag} /> 
+                    </div>
                 </div>
                 <div>
                     <div>{time}</div>
