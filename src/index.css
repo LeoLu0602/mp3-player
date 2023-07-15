@@ -17,7 +17,7 @@ input {
 
 #upper {
     max-width: 600px;
-    height: 60%;
+    height: 65%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -86,20 +86,9 @@ input {
     width: 100%;
 }
 
-#backward {
-    width: 40px;
-    height: 40px;
-    background-image: url('../public/fast-forward-btn.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transform: rotate(180deg);
-    filter: invert(100%);
-}
-
 #play-pause {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -114,9 +103,20 @@ input {
     background-image: url('../public/pause-btn.svg');
 }
 
+#backward {
+    width: 30px;
+    height: 30px;
+    background-image: url('../public/fast-forward-btn.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: rotate(180deg);
+    filter: invert(100%);
+}
+
 #forward {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../public/fast-forward-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -125,18 +125,25 @@ input {
 }
 
 #loop {
-    width: 20px;
-    height: 20px;
-    background-image: url('../public/loop.svg');
+    width: 25px;
+    height: 25px;
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     filter: invert(100%);
 }
 
+.on-loop {
+    background-image: url('../public/loop.svg');
+}
+
+.no-loop {
+    background-image: url('../public/no-loop.svg');
+}
+
 #shuffle {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-image: url('../public/shuffle.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,7 +154,7 @@ input {
 #lower {
     position: relative;
     max-width: 600px;
-    height: 40%;
+    height: 35%;
     margin: 0 auto;
     overflow-x: hidden;
     overflow-y: auto;

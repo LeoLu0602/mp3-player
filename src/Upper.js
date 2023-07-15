@@ -4,6 +4,7 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
     const [nowPlaying, setNowPlaying] = useState({ name: 'Upload Your Playlist' });
     const [time, setTime] = useState('00:00');
     const [duration, setDuration] = useState('00:00');
+    const [isLoop, setIsLoop] = useState(false);
 
     const time2str = (t) => {
         const min = Math.floor(t / 60).toString().padStart(2, '0');
@@ -24,6 +25,16 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
         setTime(time2str(audio.currentTime));
         progress.style.width = (ratio * 100).toString() + '%';
     };
+
+    const handleEnd = () => {
+        if (!isLoop) {
+            forward();
+        }
+        else {
+            const audio = document.querySelector('audio');
+            audio.play();
+        }
+    }
 
     const handlePlay = () => {
         const btn = document.getElementById('play-pause');
@@ -95,6 +106,10 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
         document.removeEventListener('touchmove', drag);
     };
 
+    const loop = () => {
+        setIsLoop(!isLoop);
+    };
+
     useEffect(() => {
         if (playlist.length > 0) {
             setNowPlaying(playlist[playingIndex]);
@@ -107,14 +122,14 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
                 src={nowPlaying.song} 
                 onCanPlay={hadleCanPlay} 
                 onTimeUpdate={handleTimeUpdate}
-                onEnded={forward}
+                onEnded={handleEnd}
                 onPlay={handlePlay}
                 onPause={handlePause}
                 autoPlay 
             />
             <div id='now-playing'>{nowPlaying.name}</div>
             <div className='btn-container'>
-                <div id='loop' />
+                <div id='loop' className={isLoop ? 'on-loop' : 'no-loop'} onClick={loop} />
                 <div id='backward' onClick={backward} />
                 <div id='play-pause' className='play-btn' onClick={playPause} />
                 <div id='forward' onClick={forward} />
