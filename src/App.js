@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Upper from './Upper';
 import Lower from './Lower';
 import Nav from './Nav';
+import Alarm from './Alarm';
 
 const App = () => {
     const [playlist, setPlaylist] = useState([]);
@@ -41,6 +42,7 @@ const App = () => {
                 playingIndex={playingIndex} 
                 setPlayingIndex={setPlayingIndex}
             />
+            <Alarm />
             <Nav />
         </div>
     );

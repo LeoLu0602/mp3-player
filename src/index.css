@@ -225,5 +225,15 @@ input {
     background-image: url('../public/alarm.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    filter: invert(100%);
+    filter: invert(40%);
+}
+
+#alarm {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
 }
