@@ -7,6 +7,8 @@
     font-weight: bold;
     font-family: sans-serif;
     box-sizing: border-box;
+    background-color: black;
+    color: white;
 }
 
 input {
@@ -50,15 +52,15 @@ input {
 }
 
 #bar {
-    height: 0.5em;
-    background-color: #aaa;
+    height: 1em;
+    background-color: white;
     cursor: pointer;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.5em;
 }
 
 #progress {
     width: 0%;
-    background-color: green;
+    background-color: red;
 }
 
 #bar-container > div {
@@ -70,25 +72,27 @@ input {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 90%;
+    width: 100%;
 }
 
 #backward {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-image: url('../public/fast-forward-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     transform: rotate(180deg);
+    filter: invert(100%);
 }
 
 #play-pause {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+    filter: invert(100%);
 }
 
 .play-btn {
@@ -100,12 +104,13 @@ input {
 }
 
 #forward {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-image: url('../public/fast-forward-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+    filter: invert(100%);
 }
 
 #lower {
@@ -119,18 +124,18 @@ input {
 
 #upload {
     position: absolute;
-    left: calc(50% - 20px);
-    top: calc(50% - 20px);
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
     background-image: url('../public/upload-btn.svg');
     background-size: cover;
     background-repeat: no-repeat;   
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
 .song-info {
-    width: 90%;
+    width: 100%;
     padding: 1em 0;
     margin: 0 auto;
     font-size: 1.5em;
@@ -139,9 +144,9 @@ input {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-bottom: solid 1px #aaa;
+    border-bottom: solid 1px white;
 }
 
 .song-info:nth-child(1) {
-    border-top: solid 1px #aaa;
+    border-top: solid 1px white;
 }
