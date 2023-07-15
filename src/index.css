@@ -79,7 +79,7 @@ input {
     justify-content: space-between;
 }
 
-#btn-container {
+.btn-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -124,6 +124,26 @@ input {
     filter: invert(100%);
 }
 
+#loop {
+    width: 20px;
+    height: 20px;
+    background-image: url('../public/loop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+#shuffle {
+    width: 20px;
+    height: 20px;
+    background-image: url('../public/shuffle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
 #lower {
     position: relative;
     max-width: 600px;
@@ -155,7 +175,6 @@ input {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-top: solid 1px white;
 }
 
 .song-info:first-child {

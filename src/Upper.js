@@ -113,10 +113,12 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
                 autoPlay 
             />
             <div id='now-playing'>{nowPlaying.name}</div>
-            <div id='btn-container'>
+            <div className='btn-container'>
+                <div id='loop' />
                 <div id='backward' onClick={backward} />
                 <div id='play-pause' className='play-btn' onClick={playPause} />
                 <div id='forward' onClick={forward} />
+                <div id='shuffle' />
             </div>
             <div id='bar-container'>
                 <div id='bar' onClick={changeTime}>
