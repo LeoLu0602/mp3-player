@@ -31,6 +31,7 @@ const App = () => {
             />
             <Upper 
                 playlist={playlist} 
+                setPlaylist={setPlaylist}
                 playingIndex={playingIndex}
                 setPlayingIndex={setPlayingIndex}
             />

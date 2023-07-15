@@ -12,9 +12,9 @@ const Lower = ({ playlist, playingIndex, setPlayingIndex }) => {
     };
 
     useEffect(() => {
-        const list = playlist.slice(playingIndex).concat(playlist.slice(0, playingIndex));
-        setDisplayList(list);
-    }, [playingIndex])
+        const displayedList = [...playlist.slice(playingIndex), ...playlist.slice(0, playingIndex)];
+        setDisplayList(displayedList);
+    }, [playlist, playingIndex]);
 
     return (
         <div id='lower'>

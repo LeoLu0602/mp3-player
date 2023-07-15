@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
+const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
     const [nowPlaying, setNowPlaying] = useState({ name: 'Upload Your Playlist' });
     const [time, setTime] = useState('00:00');
     const [duration, setDuration] = useState('00:00');
@@ -110,6 +110,30 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
         setIsLoop(!isLoop);
     };
 
+    const shuffleArray = array => {
+        // The Fisher-Yates algorithm 
+        const shuffledArray = array.slice();
+
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1)); // 0 ~ i
+            const tmp = shuffledArray[i];
+
+            shuffledArray[i] = shuffledArray[j];
+            shuffledArray[j] = tmp;
+        }
+
+        return shuffledArray;
+    }
+      
+
+    const shuffle = () => {
+        const notPlaying = [...playlist.slice(0, playingIndex), ...playlist.slice(playingIndex + 1)];
+        const shuffledPlaylist = [nowPlaying, ...shuffleArray(notPlaying)];
+
+        setPlaylist(shuffledPlaylist);
+        setPlayingIndex(0);
+    };
+
     useEffect(() => {
         if (playlist.length > 0) {
             setNowPlaying(playlist[playingIndex]);
@@ -133,7 +157,7 @@ const Upper = ({ playlist, playingIndex, setPlayingIndex }) => {
                 <div id='backward' onClick={backward} />
                 <div id='play-pause' className='play-btn' onClick={playPause} />
                 <div id='forward' onClick={forward} />
-                <div id='shuffle' />
+                <div id='shuffle' onClick={shuffle} />
             </div>
             <div id='bar-container'>
                 <div id='bar' onClick={changeTime}>
