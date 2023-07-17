@@ -17,7 +17,7 @@ input {
 
 #upper {
     max-width: 600px;
-    height: 40%;
+    height: 50%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ input {
 #lower {
     position: relative;
     max-width: 600px;
-    height: 60%;
+    height: 50%;
     margin: 0 auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -188,8 +188,8 @@ input {
     position: fixed;
     right: 1em;
     bottom: 1em;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     filter: invert(100%);
     cursor: pointer;
 }
