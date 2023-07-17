@@ -95,20 +95,9 @@ input {
     filter: invert(100%);
 }
 
-.play-btn {
-    background-image: url('../public/play-btn.svg');
-}
-
-.pause-btn {
-    background-image: url('../public/pause-btn.svg');
-}
-
 #backward {
     width: 30px;
     height: 30px;
-    background-image: url('../public/fast-forward-btn.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
     cursor: pointer;
     transform: rotate(180deg);
     filter: invert(100%);
@@ -117,9 +106,6 @@ input {
 #forward {
     width: 30px;
     height: 30px;
-    background-image: url('../public/fast-forward-btn.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
     cursor: pointer;
     filter: invert(100%);
 }
@@ -127,26 +113,13 @@ input {
 #loop {
     width: 25px;
     height: 25px;
-    background-size: cover;
-    background-repeat: no-repeat;
     cursor: pointer;
     filter: invert(100%);
-}
-
-.on-loop {
-    background-image: url('../public/loop.svg');
-}
-
-.no-loop {
-    background-image: url('../public/no-loop.svg');
 }
 
 #shuffle {
     width: 25px;
     height: 25px;
-    background-image: url('../public/shuffle.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
     cursor: pointer;
     filter: invert(100%);
 }
@@ -154,7 +127,7 @@ input {
 #lower {
     position: relative;
     max-width: 600px;
-    height: calc(50% - 4em);
+    height: 50%;
     margin: 0 auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -173,59 +146,25 @@ input {
 }
 
 .song-info {
-    width: 96%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     padding: 0.6em 0;
     margin: 0 auto;
     font-size: 1.2em;
-    text-align: center;
     cursor: pointer;
+}
+
+.song-info > div {
+    width: 90%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: center;
 }
 
 .song-info:first-child {
     background-color: red;
-}
-
-#nav {
-    position: fixed;
-    z-index: 20;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 4em;
-    background-color: black;
-    border-top: solid 1px #555;
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
-}
-
-#nav > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-}
-
-#music-player-tab > div {
-    width: 2em;
-    height: 2em;
-    background-image: url('../public/music-player.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: invert(100%);
-}
-
-#alarm-tab > div {
-    width: 2em;
-    height: 2em;
-    background-image: url('../public/alarm.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: invert(40%);
 }
 
 #alarm {
@@ -236,4 +175,11 @@ input {
     height: 100%;
     background-color: black;
     display: none;
+}
+
+#alarm-header {
+    width: 100%;
+    padding: 1em 0;    
+    font-size: 2em;
+    text-align: center;
 }

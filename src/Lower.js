@@ -25,7 +25,7 @@ const Lower = ({ playlist, playingIndex, setPlayingIndex }) => {
                     key={item.name} 
                     onClick={() => { handleClick(i) }}
                 >
-                    {item.name}
+                    <div>{item.name}</div>
                 </div>)
             }
         </div>

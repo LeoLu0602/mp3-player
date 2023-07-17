@@ -38,12 +38,12 @@ const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
 
     const handlePlay = () => {
         const btn = document.getElementById('play-pause');
-        btn.className = 'pause-btn';
+        btn.src = './pause-btn.svg';
     };
 
     const handlePause = () => {
         const btn = document.getElementById('play-pause');
-        btn.className = 'play-btn';
+        btn.src = './play-btn.svg';
     };
 
     const playPause = () => {
@@ -153,11 +153,11 @@ const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
             />
             <div id='now-playing'>{nowPlaying.name}</div>
             <div className='btn-container'>
-                <div id='loop' className={isLoop ? 'on-loop' : 'no-loop'} onClick={loop} />
-                <div id='backward' onClick={backward} />
-                <div id='play-pause' className='play-btn' onClick={playPause} />
-                <div id='forward' onClick={forward} />
-                <div id='shuffle' onClick={shuffle} />
+                <img id='loop' src={isLoop ? './loop.svg' : './no-loop.svg'} onClick={loop} />
+                <img id='backward' src='./fast-forward-btn.svg' onClick={backward} />
+                <img id='play-pause' src='./play-btn.svg' onClick={playPause} />
+                <img id='forward' src='./fast-forward-btn.svg' onClick={forward} />
+                <img id='shuffle' src='./shuffle.svg' onClick={shuffle} />
             </div>
             <div id='bar-container'>
                 <div id='bar' onClick={changeTime}>

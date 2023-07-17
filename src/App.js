@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Upper from './Upper';
 import Lower from './Lower';
-import Nav from './Nav';
 import Alarm from './Alarm';
 
 const App = () => {
@@ -43,7 +42,6 @@ const App = () => {
                 setPlayingIndex={setPlayingIndex}
             />
             <Alarm />
-            <Nav />
         </div>
     );
 };
