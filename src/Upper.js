@@ -138,13 +138,6 @@ const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
         if (playlist.length > 0) {
             setNowPlaying(playlist[playingIndex]);
         }
-        else {
-            setNowPlaying({ name: 'Upload Your Playlist', song: '' });
-            document.querySelector('audio').src = '';
-            document.getElementById('play-pause').src = './play-btn.svg';
-            setDuration('00:00');
-            document.getElementById('progress').style.width = '0%';
-        }
     }, [playlist, playingIndex]);
 
     return (

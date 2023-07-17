@@ -166,30 +166,3 @@ input {
 .song-info:first-child {
     background-color: red;
 }
-
-#alarm {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: none;
-}
-
-#alarm-header {
-    width: 100%;
-    padding: 1em 0;    
-    font-size: 2em;
-    text-align: center;
-}
-
-.delete-playlist {
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
-    width: 30px;
-    height: 30px;
-    filter: invert(100%);
-    cursor: pointer;
-}

@@ -21,10 +21,6 @@ const App = () => {
         setPlayingIndex(0);
     };
 
-    const deletePlaylist = () => {
-        setPlaylist([]);
-    };
-
     return (
         <div id='app'>
             <input 
@@ -46,7 +42,6 @@ const App = () => {
                 setPlayingIndex={setPlayingIndex}
             />
             <Alarm />
-            <img className='delete-playlist' src='./trash.svg' onClick={deletePlaylist} />
         </div>
     );
 };
