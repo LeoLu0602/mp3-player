@@ -7,7 +7,7 @@ const App = () => {
     const [playlist, setPlaylist] = useState([]);
     const [playingIndex, setPlayingIndex] = useState(-1);
 
-    const handleChange = (e) => {
+    const handleChange = () => {
         const files = document.querySelector('input').files;
         const newPlayList = [];
 
@@ -19,6 +19,10 @@ const App = () => {
 
         setPlaylist(newPlayList);
         setPlayingIndex(0);
+    };
+
+    const deletePlaylist = () => {
+        setPlaylist([]);
     };
 
     return (
@@ -42,6 +46,7 @@ const App = () => {
                 setPlayingIndex={setPlayingIndex}
             />
             <Alarm />
+            <img className='delete-playlist' src='./trash.svg' onClick={deletePlaylist} />
         </div>
     );
 };

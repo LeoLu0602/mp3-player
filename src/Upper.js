@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
-    const [nowPlaying, setNowPlaying] = useState({ name: 'Upload Your Playlist' });
+    const [nowPlaying, setNowPlaying] = useState({ name: 'Upload Your Playlist', song: '' });
     const [time, setTime] = useState('00:00');
     const [duration, setDuration] = useState('00:00');
     const [isLoop, setIsLoop] = useState(false);
@@ -137,6 +137,12 @@ const Upper = ({ playlist, setPlaylist, playingIndex, setPlayingIndex }) => {
     useEffect(() => {
         if (playlist.length > 0) {
             setNowPlaying(playlist[playingIndex]);
+        }
+        else {
+            setNowPlaying({ name: 'Upload Your Playlist', song: '' });
+            document.querySelector('audio').src = '';
+            setDuration('00:00');
+            document.getElementById('progress').style.width = '0%';
         }
     }, [playlist, playingIndex]);
 

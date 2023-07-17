@@ -183,3 +183,13 @@ input {
     font-size: 2em;
     text-align: center;
 }
+
+.delete-playlist {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+    cursor: pointer;
+}
